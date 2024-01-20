@@ -1,2 +1,33 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿
+// Задайте массив из 10 элементов, заполненный числами из
+// промежутка [-10, 10]. Замените отрицательные элементы на
+// положительные, а положительные на отрицательные.
+// Пример
+// [1 -5 6]
+// => [-1 5 -6]
+
+// int[] array = {1, 2 , -6, -7, 5, 6, -1, 8, -9, -11};
+// Console.WriteLine($"Массив ДО: [{string.Join("; ", array)}]");
+// for (int i = 0; i < array.Length; i++)
+// {
+//     array[i] *= -1;
+// //Console.Write($"{array[i]},\t");
+// }
+// Console.WriteLine($"Массив ПОСЛЕ: [{string.Join("; ", array)}]");
+
+// Найдите произведения пар чисел в одномерном массиве. Парой
+// считаем первый и последний элемент, второй и предпоследний и
+// т.д. Результат запишите в новый массив.
+// Пример
+// [1 3 2 4 2 3] => [3 6 8]
+// [2 3 1 7 5 6 3] => [6 18 5] (элемент 7 не имеет пары)
+
+// int[] array = {1, 3, 2, 4, 2, 3};
+int[] array = {2, 3, 1, 7, 5, 6, 3};
+int[] result = new int[array.Length / 2];
+for (int i = 0, j = array.Length - 1; i < result.Length; i++, j--)
+{
+    result[i] = array[i] * array[j];
+}
+Console.WriteLine($"Массив До: [{string.Join("; ", array)}]");
+Console.WriteLine($"Массив ПОСЛЕ: [{string.Join("; ", result)}]");
